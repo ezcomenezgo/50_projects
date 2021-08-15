@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    style 
+      include style.css
+    title Sticky Navigation
+  body 
+    //- if window.scrollY > nav.offsetHeight + 150
+    //-   nav.nav.active 
+
+    nav.nav
+      .container 
+        h1.logo
+          a(href="/index.html") My website
+        ul 
+          li
+            a.current(href="#") Home
+          li
+            a(href="#") About
+          li
+            a(href="#") Service
+          li
+            a(href="#") Contact
+    .hero 
+      .container 
+        h1 Welcome to my Website 
+        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea harum facere rem dolor repellat modi voluptatum tempora necessitatibus, ullam totam eveniet voluptatem dolorem cumque! Consequatur vel at autem assumenda nulla.
+    
+    section.container.content
+      h2 Content one 
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam delectus eaque dolore, optio fugit perferendis reprehenderit iure quia quisquam recusandae provident ipsum maxime labore doloribus! Id, eveniet optio eligendi cupiditate dolore, similique aliquid illo amet in accusantium, odit illum consequuntur eius commodi? Consectetur officia quae delectus assumenda quod provident natus pariatur debitis optio ex accusamus, maxime veniam deleniti aliquid ipsam nesciunt magnam. Aliquam natus quia amet maiores. Molestias officiis quae modi minima ad! Iste, veritatis quas! Necessitatibus ratione perspiciatis deleniti iste quas placeat accusamus laborum, fugiat esse quaerat vero excepturi ea modi tenetur! Perspiciatis, necessitatibus quos inventore laborum provident ullam!
+
+      h3 Content Two 
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore voluptatibus quas eius velit facilis iure vero, saepe modi ullam, at quidem, itaque expedita illo optio. Culpa, aspernatur impedit officiis iusto tenetur in atque doloribus debitis ex enim qui. Vel non mollitia doloremque omnis ducimus molestiae aliquam inventore error suscipit.
+
+    script 
+      include script.js

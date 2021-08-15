@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  padding: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  background-color: #222;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out
+}
+
+.nav.active {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active a {
+  color: #000;
+}
+
+.nav a.current, .nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.nav.active .container {
+  padding: 10px 0
+}
+
+.hero {
+  background-image: url('https://images.pexels.com/photos/8858916/pexels-photo-8858916.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: -2;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin: -20px 0 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.content h2,
+.content h3 {
+  font-size: 150%;
+  margin: 10px 0;
+}
+
+.content p {
+  color: #555;
+  line-height: 30px;
+  letter-spacing: 1.2px;
+}
+    </style>
+    <title>Sticky Navigation</title>
+  </head>
+  <body> 
+    <nav class="nav">
+      <div class="container"> 
+        <h1 class="logo"><a href="/index.html">My website</a></h1>
+        <ul> 
+          <li><a class="current" href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero"> 
+      <div class="container"> 
+        <h1>Welcome to my Website </h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea harum facere rem dolor repellat modi voluptatum tempora necessitatibus, ullam totam eveniet voluptatem dolorem cumque! Consequatur vel at autem assumenda nulla.</p>
+      </div>
+    </div>
+    <section class="container content">
+      <h2>Content one </h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam delectus eaque dolore, optio fugit perferendis reprehenderit iure quia quisquam recusandae provident ipsum maxime labore doloribus! Id, eveniet optio eligendi cupiditate dolore, similique aliquid illo amet in accusantium, odit illum consequuntur eius commodi? Consectetur officia quae delectus assumenda quod provident natus pariatur debitis optio ex accusamus, maxime veniam deleniti aliquid ipsam nesciunt magnam. Aliquam natus quia amet maiores. Molestias officiis quae modi minima ad! Iste, veritatis quas! Necessitatibus ratione perspiciatis deleniti iste quas placeat accusamus laborum, fugiat esse quaerat vero excepturi ea modi tenetur! Perspiciatis, necessitatibus quos inventore laborum provident ullam!</p>
+      <h3>Content Two </h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore voluptatibus quas eius velit facilis iure vero, saepe modi ullam, at quidem, itaque expedita illo optio. Culpa, aspernatur impedit officiis iusto tenetur in atque doloribus debitis ex enim qui. Vel non mollitia doloremque omnis ducimus molestiae aliquam inventore error suscipit.</p>
+    </section>
+    <script>
+       /*
+ * @Author: your name
+ * @Date: 2021-08-13 10:41:55
+ * @LastEditTime: 2021-08-15 14:10:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /_project_starter/script.js
+ */
+
+const nav = document.querySelector('.nav')
+window.addEventListener('scroll', fixNav)
+
+function fixNav() {
+  if (window.scrollY > nav.offsetHeight + 150) {
+    nav.classList.add('active')
+  } else {
+    nav.classList.remove('active')
+  }
+}
+    </script>
+  </body>
+</html>
